@@ -17,9 +17,9 @@ const navItems = [
     hashLink: true,
   },
   {
-    name: "About",
-    path: "/#about",
-    hashLink: true,
+    name: "Reservations",
+    path: "/reservations",
+    hashLink: false,
   },
   {
     name: "Menu",
@@ -27,9 +27,9 @@ const navItems = [
     hashLink: true,
   },
   {
-    name: "Reservations",
-    path: "/reservations",
-    hashLink: false,
+    name: "About",
+    path: "/#about",
+    hashLink: true,
   },
   {
     name: "Order Online",
