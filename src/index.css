@@ -108,17 +108,19 @@ img {
 }
 
 .button-primary {
-  padding: 0.5rem 1rem;
-  border-radius: 2rem;
+  padding: .5rem 1rem;
+  border-radius: 1rem;
   background-color: #f4ce14;
   color: #495e57;
   font-weight: bold;
-  border: 2px solid #f4ce14;
+  transition: 400ms;
 }
 
-.button-primary:hover,
+.button-primary:hover{
+  transition: 200ms;
+  background-color: #cdac0a;
+}
 .button-primary:focus {
-  background-color: #495e57;
-  border-color: #495e57;
-  color: #ffffff;
+  transition: 200ms;
+  background-color: #9c8307;
 }
