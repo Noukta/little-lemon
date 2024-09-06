@@ -33,12 +33,12 @@ const navItems = [
   },
   {
     name: "Order Online",
-    path: "/orderOnline",
+    path: "#",
     hashLink: false,
   },
   {
     name: "Login",
-    path: "/login",
+    path: "#",
     hashLink: false,
   },
 ];
