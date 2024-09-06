@@ -1,3 +1,6 @@
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+
 const seededRandom = (seed) => {
   const m = 2 ** 35 - 31;
   const a = 185852;
@@ -6,7 +9,7 @@ const seededRandom = (seed) => {
   return () => (s = (s * a) % m) / m;
 };
 
-const fetchAPI = (date) => {
+const fetch = (date) => {
   let result = [];
   let random = seededRandom(date.getDate());
 
@@ -18,8 +21,20 @@ const fetchAPI = (date) => {
   return result;
 };
 
-const submitAPI = (formData) => {
-  return true;
+const wait = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
+
+const useSubmit = () => {
+  const [isLoading, setLoading] = useState(false);
+  const navigate = useNavigate();
+
+  const submit = async (to, data) => {
+    setLoading(true);
+    await wait(1000);
+    setLoading(false);
+    navigate(to);
+  };
+
+  return { isLoading, submit };
 };
 
-export { fetchAPI, submitAPI };
+export { fetch, useSubmit };

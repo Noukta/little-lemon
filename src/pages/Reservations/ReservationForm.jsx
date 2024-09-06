@@ -1,11 +1,14 @@
 import { useState } from "react";
+import { useSubmit } from "../../util/mockAPI";
 import FormField from "./FormField";
 
 const ReservationForm = ({
   availableTimes,
   dispatchOnDateChange,
-  submitData,
+  // submitData,
+  // isLoading,
 }) => {
+  const { isLoading, submit } = useSubmit();
   const minimumDate = new Date().toISOString().split("T")[0];
   const defaultTime = availableTimes[0];
   const minimumNumberOfGuests = 1;
@@ -42,7 +45,7 @@ const ReservationForm = ({
 
   const handleFormSubmit = (e) => {
     e.preventDefault();
-    submitData({ date, time, numberOfGuests, occasion });
+    submit("/confirmed-reservation", { date, time, numberOfGuests, occasion });
   };
 
   return (
@@ -127,9 +130,9 @@ const ReservationForm = ({
       <button
         className="button-primary"
         type="submit"
-        disabled={!areAllFieldsValid()}
+        disabled={!areAllFieldsValid() || isLoading}
       >
-        Reserve now!
+        {isLoading ? "Reserving..." : "Reserve now!"}
       </button>
     </form>
   );

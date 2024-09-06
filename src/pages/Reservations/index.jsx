@@ -1,31 +1,31 @@
 import { useReducer } from "react";
-import { useNavigate } from "react-router-dom";
-import { fetchAPI, submitAPI } from "../../util/mockAPI";
+import { fetch } from "../../util/mockAPI";
 import ReservationForm from "./ReservationForm";
 import "../../styles/reservations.css";
 
 const updateTimes = (availableTimes, date) => {
-  const response = fetchAPI(new Date(date));
+  const response = fetch(new Date(date));
   return response.length !== 0 ? response : availableTimes;
 };
 
 const initializeTimes = (initialAvailableTimes) => [
   ...initialAvailableTimes,
-  ...fetchAPI(new Date()),
+  ...fetch(new Date()),
 ];
 
 const Reservations = () => {
+  // const { isLoading, submit } = useSubmit();
   const [availableTimes, dispatchOnDateChange] = useReducer(
     updateTimes,
     [],
     initializeTimes
   );
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
 
-  const submitData = (formData) => {
-    const response = submitAPI(formData);
-    if (response) navigate("/confirmed-reservation");
-  };
+  // const submitData = (formData) => {
+  //   const response = submit(formData);
+  //   if (response) navigate("/confirmed-reservation");
+  // };
 
   return (
     <main className="reservations">
@@ -33,7 +33,8 @@ const Reservations = () => {
       <ReservationForm
         availableTimes={availableTimes}
         dispatchOnDateChange={dispatchOnDateChange}
-        submitData={submitData}
+        // submitData={submitData}
+        // isLoading={isLoading}
       />
     </main>
   );
