@@ -5,8 +5,8 @@ header {
 .hover-underline-animation {
     display: inline-block;
     position: relative;
-  }
-  
+}
+
 .hover-underline-animation:after {
   content: "";
   position: absolute;

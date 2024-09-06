@@ -29,7 +29,7 @@
   height: 12.5rem;
   object-fit: cover;
   object-position: 50% 5%;
-  transition: all linear 300ms;
+  transition: all linear 200ms;
 }
 
 .meal-card-header,
@@ -61,7 +61,13 @@
 }
 
 .meal-card-body-footer a {
+  width: fit-content;
   font-weight: bold;
+  transition: all linear 100ms;
+}
+
+.meal-card-body-footer a:hover {
+  transform: scale(1.04);
 }
 
 .meal-card-body-footer svg {
