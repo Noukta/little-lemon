@@ -61,13 +61,15 @@
 }
 
 .meal-card-body-footer a {
+  padding: .5rem;
+  border-radius: 1rem;
   width: fit-content;
   font-weight: bold;
-  transition: all linear 100ms;
+  transition: all linear 200ms;
 }
 
 .meal-card-body-footer a:hover {
-  transform: scale(1.04);
+  background-color: #f4cf15;
 }
 
 .meal-card-body-footer svg {

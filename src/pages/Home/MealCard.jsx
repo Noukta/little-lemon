@@ -15,7 +15,7 @@ const MealCard = ({ meal }) => {
       </div>
       <div className="meal-card-body-footer">
         <p>{meal.description}</p>
-        <HashLink to="/orderOnline">
+        <HashLink to="#">
           Order a delivery <FontAwesomeIcon icon={faMotorcycle} />
         </HashLink>
       </div>
